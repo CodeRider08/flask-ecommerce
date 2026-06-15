@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Admin Orders</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="container mt-5">
+
+<h1 class="mb-4">
+    Admin Orders
+</h1>
+
+{% for order in orders %}
+
+<div class="card p-3 mb-4">
+
+    <h3>
+        Order #{{ order.id }}
+    </h3>
+
+    <p>
+        User:
+        {{ order.username }}
+    </p>
+
+    <p>
+        Total:
+        ₹{{ order.total }}
+    </p>
+
+    <p>
+        Status:
+        {{ order.status }}
+    </p>
+
+    <a href="/update-status/{{ order.id }}/Pending"
+    class="btn btn-warning">
+
+        Pending
+
+    </a>
+
+    <a href="/update-status/{{ order.id }}/Shipped"
+    class="btn btn-primary">
+
+        Shipped
+
+    </a>
+
+    <a href="/update-status/{{ order.id }}/Delivered"
+    class="btn btn-success">
+
+        Delivered
+
+    </a>
+
+</div>
+
+{% endfor %}
+
+</body>
+</html>
