@@ -945,10 +945,11 @@ def login():
         if user:
 
             session['username'] = username
-
             return redirect('/')
 
     return render_template('login.html')
+
+
 
 
 # ---------------- LOGOUT ---------------- #
