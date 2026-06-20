@@ -1557,10 +1557,6 @@ def login():
 
             session['username'] = username
 
-            # ADMIN LOGIN
-            if username == "admin":
-                session['admin'] = True
-
             return redirect('/')
 
     return render_template('login.html')
